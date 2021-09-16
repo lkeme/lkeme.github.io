@@ -36,7 +36,7 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="沐雨露の山头">
 <meta property="og:description" content="前言记录Git杂项命令合集 删除远程分支1$ git push origin --delete [branchname] 删除本地已合并的分支12$ git branch -d [branchname]$ git branch -D [branchName] 删除所有本地TAG1$ git tag -l | xargs git tag -d 删除远程本地TAG 注意Windows平台可能需要用gi">
 <meta property="article:published_time" content="2021-09-16T04:08:27.000Z">
-<meta property="article:modified_time" content="2021-09-16T07:21:00.037Z">
+<meta property="article:modified_time" content="2021-09-16T07:43:07.190Z">
 <meta property="article:author" content="Mudew">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -186,7 +186,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除远程分支"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">删除远程分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除本地已合并的分支"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">删除本地已合并的分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除所有本地TAG"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">删除所有本地TAG</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除远程本地TAG"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">删除远程本地TAG</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除远程分支"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">删除远程分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除本地已合并的分支"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">删除本地已合并的分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除所有本地TAG"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">删除所有本地TAG</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除远程本地TAG"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">删除远程本地TAG</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#新建空白分支"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">新建空白分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#强制拉取并覆盖本地代码"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">强制拉取并覆盖本地代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#加速克隆及下载镜像"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">加速克隆及下载镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置代理"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">设置代理</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -215,8 +215,13 @@ ga('send', 'pageview');
 <h3 id="删除本地已合并的分支"><a href="#删除本地已合并的分支" class="headerlink" title="删除本地已合并的分支"></a>删除本地已合并的分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d [branchname]</span><br><span class="line">$ git branch -D [branchName]</span><br></pre></td></tr></table></figure>
 <h3 id="删除所有本地TAG"><a href="#删除所有本地TAG" class="headerlink" title="删除所有本地TAG"></a>删除所有本地TAG</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git tag -l | xargs git tag -d</span><br></pre></td></tr></table></figure>
 <h3 id="删除远程本地TAG"><a href="#删除远程本地TAG" class="headerlink" title="删除远程本地TAG"></a>删除远程本地TAG</h3><blockquote>
-<p>注意<code>Windows</code>平台可能需要用<code>git-bash</code>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git show-ref --tag | awk <span class="string">'&#123;print ":" $2&#125;'</span> | xargs git push origin</span><br></pre></td></tr></table></figure></p>
+<p>注意<code>Windows</code>平台可能需要用<code>git-bash</code>执行</p>
 </blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git show-ref --tag | awk <span class="string">'&#123;print ":" $2&#125;'</span> | xargs git push origin</span><br></pre></td></tr></table></figure>
+<h3 id="新建空白分支"><a href="#新建空白分支" class="headerlink" title="新建空白分支"></a>新建空白分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout --orphan newbranch</span><br><span class="line">$ git rm -rf .</span><br><span class="line">$ git commit --allow-empty -m <span class="string">"[empty|rm] initial commit"</span></span><br></pre></td></tr></table></figure>
+<h3 id="强制拉取并覆盖本地代码"><a href="#强制拉取并覆盖本地代码" class="headerlink" title="强制拉取并覆盖本地代码"></a>强制拉取并覆盖本地代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch --all</span><br><span class="line">$ git reset --hard origin/master</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
+<h3 id="加速克隆及下载镜像"><a href="#加速克隆及下载镜像" class="headerlink" title="加速克隆及下载镜像"></a>加速克隆及下载镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># https://doc.fastgit.org/</span></span><br><span class="line"><span class="comment"># https://gitclone.com/</span></span><br><span class="line"><span class="comment"># https://github.com.cnpmjs.org/</span></span><br><span class="line"><span class="comment"># https://ghproxy.com/</span></span><br><span class="line"><span class="comment"># 免替换</span></span><br><span class="line">$ git config --global url.<span class="string">"https://hub.fastgit.org"</span>.insteadOf https://github.com</span><br></pre></td></tr></table></figure>
+<h3 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全局项目</span></span><br><span class="line">$ git config --global http.proxy 127.0.0.1:1080</span><br><span class="line"><span class="comment"># 单独项目</span></span><br><span class="line">$ git config --<span class="built_in">local</span> http.proxy 127.0.0.1:1080</span><br><span class="line"><span class="comment"># 清除</span></span><br><span class="line">$ git config --global --<span class="built_in">unset</span> http.proxy</span><br></pre></td></tr></table></figure>
 <p>END.</p>
 
         </div>
@@ -226,7 +231,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2021-09-16T07:21:00.037Z" itemprop="dateUpdated">2021-09-16 15:21:00</time>
+    Last updated: <time datetime="2021-09-16T07:43:07.190Z" itemprop="dateUpdated">2021-09-16 15:43:07</time>
 </span><br>
 
 
