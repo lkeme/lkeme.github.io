@@ -29,17 +29,21 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="tittle-tattle">
-    <meta name="description" content="前言小米AX9000折腾记录, 官方固件版本为AX9000 1.0.108.bin 正文通过虚拟机开启AX9000的SSH123456789101112131415161718192021222324252627# 比较重点的一个脚本 下面会用到# &#x2F;usr&#x2F;lib&#x2F;lua&#x2F;luci&#x2F;controller&#x2F;admin&#x2F;xqsystem.luamodule(&quot;luci.controller.admi">
+    <meta name="description" content="前言小米AX9000折腾记录, 官方固件版本为AX9000 1.0.108.bin不是全量文章，整合流程，挑出部分重点，防止重复踩坑。 正文通过虚拟机开启AX9000的SSH123456789101112131415161718192021222324252627# 比较重点的一个脚本 下面会用到# &#x2F;usr&#x2F;lib&#x2F;lua&#x2F;luci&#x2F;controller&#x2F;admin&#x2F;xqsystem.luamo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小米AX9000折腾记录">
 <meta property="og:url" content="https://mudew.com/2021/09/21/millet-ax9000-toss-record/index.html">
 <meta property="og:site_name" content="沐雨露の山头">
-<meta property="og:description" content="前言小米AX9000折腾记录, 官方固件版本为AX9000 1.0.108.bin 正文通过虚拟机开启AX9000的SSH123456789101112131415161718192021222324252627# 比较重点的一个脚本 下面会用到# &#x2F;usr&#x2F;lib&#x2F;lua&#x2F;luci&#x2F;controller&#x2F;admin&#x2F;xqsystem.luamodule(&quot;luci.controller.admi">
+<meta property="og:description" content="前言小米AX9000折腾记录, 官方固件版本为AX9000 1.0.108.bin不是全量文章，整合流程，挑出部分重点，防止重复踩坑。 正文通过虚拟机开启AX9000的SSH123456789101112131415161718192021222324252627# 比较重点的一个脚本 下面会用到# &#x2F;usr&#x2F;lib&#x2F;lua&#x2F;luci&#x2F;controller&#x2F;admin&#x2F;xqsystem.luamo">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200713084745103.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDUwNDEz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200713084801302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDUwNDEz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200713084846122.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDUwNDEz,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2021-09-21T04:08:27.000Z">
-<meta property="article:modified_time" content="2021-09-21T05:39:14.927Z">
+<meta property="article:modified_time" content="2021-09-24T09:06:33.980Z">
 <meta property="article:author" content="Mudew">
 <meta property="article:tag" content="tittle-tattle">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200713084745103.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDUwNDEz,size_16,color_FFFFFF,t_70">
     
         <link rel="alternate" type="application/atom+xml" title="沐雨露の山头" href="/atom.xml">
     
@@ -186,7 +190,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">2.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通过虚拟机开启AX9000的SSH"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">通过虚拟机开启AX9000的SSH</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#永久获取SSH权限-固化SSH"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">永久获取SSH权限(固化SSH)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#刷QSDK-amp-amp-OpenWrt的方法"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">刷QSDK&amp;&amp;OpenWrt的方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第三方固件地址"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">第三方固件地址</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意事项"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">注意事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#相关项目"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">相关项目</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正文"><span class="post-toc-number">2.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通过虚拟机开启AX9000的SSH"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">通过虚拟机开启AX9000的SSH</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#永久获取SSH权限-固化SSH"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">永久获取SSH权限(固化SSH)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#刷QSDK-amp-amp-OpenWrt的方法"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">刷QSDK&amp;&amp;OpenWrt的方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第三方固件地址"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">第三方固件地址</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AdGuardHome"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">AdGuardHome</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#挂载U盘到-overlay"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">挂载U盘到&#x2F;overlay</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决OpenWRT安装第三方包错误"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">解决OpenWRT安装第三方包错误</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#换国内源"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">换国内源</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意事项"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">注意事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#相关项目"><span class="post-toc-number">2.10.</span> <span class="post-toc-text">相关项目</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -210,7 +214,7 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>小米AX9000折腾记录, 官方固件版本为<code>AX9000 1.0.108.bin</code></p>
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>小米AX9000折腾记录, 官方固件版本为<code>AX9000 1.0.108.bin</code><br>不是全量文章，整合流程，挑出部分重点，防止重复踩坑。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="通过虚拟机开启AX9000的SSH"><a href="#通过虚拟机开启AX9000的SSH" class="headerlink" title="通过虚拟机开启AX9000的SSH"></a>通过虚拟机开启AX9000的SSH</h3><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># 比较重点的一个脚本 下面会用到</span><br><span class="line"># /usr/lib/lua/luci/controller/admin/xqsystem.lua</span><br><span class="line"></span><br><span class="line">module(<span class="string">"luci.controller.admin.xqsystem"</span>, <span class="built_in">package</span>.<span class="built_in">seeall</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span></span></span><br><span class="line">    <span class="keyword">local</span> page   = node(<span class="string">"api"</span>)</span><br><span class="line">    page.target  = firstchild()</span><br><span class="line">    page.title   = (<span class="string">""</span>)</span><br><span class="line">    page.order   = <span class="number">100</span></span><br><span class="line">    page.index = <span class="literal">true</span></span><br><span class="line">    page   = node(<span class="string">"api"</span>,<span class="string">"xqsystem"</span>)</span><br><span class="line">    page.target  = firstchild()</span><br><span class="line">    page.title   = (<span class="string">""</span>)</span><br><span class="line">    page.order   = <span class="number">100</span></span><br><span class="line">    page.index = <span class="literal">true</span></span><br><span class="line">    entry(&#123;<span class="string">"api"</span>, <span class="string">"xqsystem"</span>, <span class="string">"token"</span>&#125;, call(<span class="string">"getToken"</span>), (<span class="string">""</span>), <span class="number">103</span>, <span class="number">0x08</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> LuciHttp = <span class="built_in">require</span>(<span class="string">"luci.http"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getToken</span><span class="params">()</span></span></span><br><span class="line">    <span class="keyword">local</span> result = &#123;&#125;</span><br><span class="line">    result[<span class="string">"code"</span>] = <span class="number">0</span></span><br><span class="line">    result[<span class="string">"token"</span>] = <span class="string">"; nvram set ssh_en=1; nvram set uart_en=1; nvram set boot_wait=on; nvram commit; uci set wireless.@wifi-iface[0].key=\`mkxqimage -I\`; uci commit; sed -i 's/channel=.*/channel=\"debug\"/g' /etc/init.d/dropbear; /etc/init.d/dropbear start;"</span></span><br><span class="line">    LuciHttp.write_json(result)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>重点是将OPENWRT路由器ip设置为169.254.31.1, 然后关闭DHCP。不然会出现各式报错。</p>
@@ -236,7 +240,7 @@ ga('send', 'pageview');
 <li>将OPENWRT路由器ip设置为169.254.31.1</li>
 <li>关闭OpenWrt的DHCP</li>
 <li>使用wireless-ax9000.sh 或者 手动写入代码块 <code>xqsystem.lua</code></li>
-<li>成功后再次打开路由器后台查看 5G 频段 Wi-Fi 密码，这个 Wi-Fi 密码就是我们默认的 ssh 密码，<br>+</li>
+<li>成功后再次打开路由器后台查看 5G 频段 Wi-Fi 密码，这个 Wi-Fi 密码就是我们默认的 ssh 密码，</li>
 </ul>
 <blockquote>
 <p>以上最好是都在2.4G频段进行。几个教程需要搭配使用，看重点，可以多阅读几遍。</p>
@@ -251,27 +255,66 @@ ga('send', 'pageview');
 <blockquote>
 <p>这里刷完是两个分区，可以官方固件和openwrt来回切换。<br>注意如果要重新刷，需要先执行3到原版固件，再执行2写入固件。</p>
 </blockquote>
-<p>参考教程:  </p>
+<p>参考教程:</p>
 <ol>
-<li><a href="https://www.right.com.cn/forum/thread-5657691-1-1.html" target="_blank" rel="noopener">小米ax9000刷qsdk,openwrt的方法</a>  </li>
+<li><a href="https://www.right.com.cn/forum/thread-5657691-1-1.html" target="_blank" rel="noopener">小米ax9000刷qsdk,openwrt的方法</a></li>
 <li><a href="https://www.right.com.cn/forum/thread-4111331-1-1.html" target="_blank" rel="noopener">小米红米路由器AX6刷第三方openwrt固件</a></li>
 </ol>
 <h3 id="第三方固件地址"><a href="#第三方固件地址" class="headerlink" title="第三方固件地址"></a>第三方固件地址</h3><ol>
-<li><a href="https://www.right.com.cn/forum/thread-4875974-1-1.html" target="_blank" rel="noopener">【Openwrt开发版每周五更新】新版AX6/AX3600/AX9000(QSDK),NSS,组网,jd,多播,小猫咪</a>  </li>
-<li><a href="https://github.com/jingleijack/Openwrt_Beta/releases" target="_blank" rel="noopener">开发版 jingleijack/Openwrt_Beta</a>  </li>
+<li><a href="https://www.right.com.cn/forum/thread-4875974-1-1.html" target="_blank" rel="noopener">【Openwrt开发版每周五更新】新版AX6/AX3600/AX9000(QSDK),NSS,组网,jd,多播,小猫咪</a></li>
+<li><a href="https://github.com/jingleijack/Openwrt_Beta/releases" target="_blank" rel="noopener">开发版 jingleijack/Openwrt_Beta</a></li>
 <li><a href="https://www.right.com.cn/forum/thread-4743640-1-1.html" target="_blank" rel="noopener">小米 AX9000 OpenWrt R21.7.1.10 最新源码、V兔出国海淘海淘、clash、打倒美帝、JD.</a></li>
 </ol>
+<h3 id="AdGuardHome"><a href="#AdGuardHome" class="headerlink" title="AdGuardHome"></a>AdGuardHome</h3><ol>
+<li><a href="https://www.right.com.cn/forum/thread-4090928-1-1.html" target="_blank" rel="noopener">AdGuardHome去广告和DNS正确姿势</a></li>
+<li><a href="https://www.right.com.cn/forum/thread-4055807-1-1.html" target="_blank" rel="noopener">AdGuard Home设置指南</a></li>
+<li><a href="https://www.right.com.cn/forum/thread-4084366-1-1.html" target="_blank" rel="noopener">openwrt插件 AdGuardHome学习与分享</a></li>
+<li><a href="https://www.right.com.cn/forum/thread-4486232-1-1.html" target="_blank" rel="noopener">AdGuard Home正确使用姿势/去广告/防污/加速解析</a></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. AdGuardHome管理面板账号密码 root-admin 或者root-password</span><br><span class="line">2.</span><br></pre></td></tr></table></figure>
+<h3 id="挂载U盘到-overlay"><a href="#挂载U盘到-overlay" class="headerlink" title="挂载U盘到/overlay"></a>挂载U盘到/overlay</h3><p>AX9000默认的分区大小不足以正常使用软件，所以需要挂载U盘扩容空间<br>请注意要提前把U盘格式化成ext4</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 检测U盘是否插入</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat /proc/scsi/usb-storage/0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 写入以下代码块</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> vim /etc/init.d/miwifi_overlay </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 这里使用AX6的一段代码来挂载overlay  </span></span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh /etc/rc.common</span></span><br><span class="line">START=00</span><br><span class="line"></span><br><span class="line">. /lib/functions/preinit.sh</span><br><span class="line"></span><br><span class="line">start() &#123;</span><br><span class="line">        [ -e /data/overlay ] || mkdir /data/overlay</span><br><span class="line">        [ -e /data/overlay/upper ] || mkdir /data/overlay/upper</span><br><span class="line">        [ -e /data/overlay/work ] || mkdir /data/overlay/work</span><br><span class="line"></span><br><span class="line">        mount --bind /data/overlay /overlay</span><br><span class="line">        fopivot /overlay/upper /overlay/work /rom 1</span><br><span class="line"></span><br><span class="line">        #Fixup miwifi misc, and DO NOT use /overlay/upper/etc instead, /etc/uci-defaults/* may be already removed</span><br><span class="line">        /bin/mount -o noatime,move /rom/data /data 2&gt;&amp;-</span><br><span class="line">        /bin/mount -o noatime,move /rom/etc /etc 2&gt;&amp;-</span><br><span class="line">        /bin/mount -o noatime,move /rom/ini /ini 2&gt;&amp;-</span><br><span class="line">        /bin/mount -o noatime,move /rom/userdisk /userdisk 2&gt;&amp;-</span><br><span class="line"></span><br><span class="line">        return 0</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 给权限</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> chmod 755 /etc/init.d/miwifi_overlay</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> /etc/init.d/miwifi_overlay <span class="built_in">enable</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sync </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> reboot</span></span><br></pre></td></tr></table></figure>
+<p>重启后浏览器登录luci界面，点击系统-&gt;挂载点。在挂载点的下方点击修改按钮。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdnimg.cn/20200713084745103.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDUwNDEz,size_16,color_FFFFFF,t_70" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>挂载点选择作为外部overlay使用(/overlay)(不要选择其他选项)，点击保存，再点击保存&amp;应用。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdnimg.cn/20200713084801302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDUwNDEz,size_16,color_FFFFFF,t_70" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>在命令行输入reboot执行路由器重启。重启后路由器可能会恢复出厂设置。 重启后打开系统-&gt;软件包，可以看见空闲空间已经变大。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdnimg.cn/20200713084846122.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDUwNDEz,size_16,color_FFFFFF,t_70" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>挂载完成，这里参考了<br><a href="https://blog.csdn.net/qq_43450413/article/details/107145575" target="_blank" rel="noopener">OpenWrt挂载U盘</a><br><a href="https://www.vediotalk.com/archives/13889" target="_blank" rel="noopener">OPENWRT | ESXI 下 OpenWrt扩容Overlay,增加安装插件空间</a>  </p>
+<h3 id="解决OpenWRT安装第三方包错误"><a href="#解决OpenWRT安装第三方包错误" class="headerlink" title="解决OpenWRT安装第三方包错误"></a>解决OpenWRT安装第三方包错误</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@OpenWrt:~# opkg print-architecture</span><br><span class="line">arch all 1</span><br><span class="line">arch noarch 1</span><br><span class="line">arch aarch64_cortex-a53_neon-vfpv4 10</span><br></pre></td></tr></table></figure>
+<p>把返回的回显复制到opkg的设置里<br>倒数第二行加一行，修改后如下  </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@OpenWrt:~# opkg print-architecture</span><br><span class="line">arch all 1</span><br><span class="line">arch noarch 1</span><br><span class="line">arch aarch64_cortex-a53 8</span><br><span class="line">arch aarch64_cortex-a53_neon-vfpv4 10</span><br></pre></td></tr></table></figure>
+<p>但是因为<code>ipq807x</code>并没有适配，所以一些包最好是手动下载安装，手动安装依赖。  </p>
+<h3 id="换国内源"><a href="#换国内源" class="headerlink" title="换国内源"></a>换国内源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 注意 19.07-SNAPSHOT</span><br><span class="line">https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;openwrt&#x2F;releases&#x2F;19.07-SNAPSHOT&#x2F;packages&#x2F;</span><br><span class="line"># 注意 ipq807x</span><br><span class="line">https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;openwrt&#x2F;releases&#x2F;19.07-SNAPSHOT&#x2F;targets&#x2F;ipq807x&#x2F;</span><br><span class="line"># 注意 aarch64_cortex-a53</span><br><span class="line">https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;openwrt&#x2F;releases&#x2F;19.07-SNAPSHOT&#x2F;packages&#x2F;aarch64_cortex-a53&#x2F;</span><br></pre></td></tr></table></figure>
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
 <li>只有QSDK固件里面有CPU调速软件</li>
 <li>QSDK网络好，OpenWrt插件多</li>
 <li>信道36~48，149~161</li>
 <li>…</li>
 </ol>
-<h3 id="相关项目"><a href="#相关项目" class="headerlink" title="相关项目"></a>相关项目</h3><p>除了文章中引用的项目，还有以下可能会用到的关联:  </p>
+<h3 id="相关项目"><a href="#相关项目" class="headerlink" title="相关项目"></a>相关项目</h3><p>除了文章中引用的项目，还有以下可能会用到的关联:</p>
 <ol>
-<li><a href="https://www.right.com.cn/forum/thread-4377910-1-1.html" target="_blank" rel="noopener">AX9000和AX6000已经可以获取SSH了</a>  </li>
-<li><a href="https://www.bilibili.com/video/BV1fQ4y1R7LY/" target="_blank" rel="noopener">使用虚拟机解锁红米ax6-ssh并刷入qsdk固件</a>  </li>
-<li><a href="https://forum.openwrt.org/t/openwrt-support-for-xiaomi-ax9000/98908" target="_blank" rel="noopener">OpenWrt support for Xiaomi AX9000</a>  </li>
+<li><a href="https://www.right.com.cn/forum/thread-4377910-1-1.html" target="_blank" rel="noopener">AX9000和AX6000已经可以获取SSH了</a></li>
+<li><a href="https://www.bilibili.com/video/BV1fQ4y1R7LY/" target="_blank" rel="noopener">使用虚拟机解锁红米ax6-ssh并刷入qsdk固件</a></li>
+<li><a href="https://forum.openwrt.org/t/openwrt-support-for-xiaomi-ax9000/98908" target="_blank" rel="noopener">OpenWrt support for Xiaomi AX9000</a></li>
 <li><a href="https://xiaomifirmware.net/xiaomi-router-ax9000/" target="_blank" rel="noopener">Xiaomi router AX9000</a></li>
 <li><a href="https://github.com/xiangfeidexiaohuo/OpenWrt_Build" target="_blank" rel="noopener">OpenWrt_Build openwrt-autobuild</a></li>
 </ol>
@@ -284,7 +327,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2021-09-21T05:39:14.927Z" itemprop="dateUpdated">2021-09-21 13:39:14</time>
+    Last updated: <time datetime="2021-09-24T09:06:33.980Z" itemprop="dateUpdated">2021-09-24 17:06:33</time>
 </span><br>
 
 
