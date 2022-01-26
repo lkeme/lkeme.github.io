@@ -32,11 +32,11 @@ ga('send', 'pageview');
     <meta name="description" content="前言记录Git杂项命令合集 删除远程分支1$ git push origin --delete [branchname] 删除本地已合并的分支12$ git branch -d [branchname]$ git branch -D [branchName] 删除所有本地TAG1$ git tag -l | xargs git tag -d 删除远程本地TAG 注意Windows平台可能需要用gi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git杂项命令合集">
-<meta property="og:url" content="https://mudew.com/2021/09/16/git-miscellaneous-command-set/index.html">
+<meta property="og:url" content="https://mudew.com/2022/01/26/git-miscellaneous-command-set/index.html">
 <meta property="og:site_name" content="沐雨露の山头">
 <meta property="og:description" content="前言记录Git杂项命令合集 删除远程分支1$ git push origin --delete [branchname] 删除本地已合并的分支12$ git branch -d [branchname]$ git branch -D [branchName] 删除所有本地TAG1$ git tag -l | xargs git tag -d 删除远程本地TAG 注意Windows平台可能需要用gi">
-<meta property="article:published_time" content="2021-09-16T04:08:27.000Z">
-<meta property="article:modified_time" content="2022-01-20T18:43:14.069Z">
+<meta property="article:published_time" content="2022-01-26T04:08:27.000Z">
+<meta property="article:modified_time" content="2022-01-26T06:44:05.109Z">
 <meta property="article:author" content="Mudew">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -166,8 +166,8 @@ ga('send', 'pageview');
         <h1 class="title">Git杂项命令合集</h1>
         <h5 class="subtitle">
             
-                <time datetime="2021-09-16T04:08:27.000Z" itemprop="datePublished" class="page-time">
-  2021-09-16
+                <time datetime="2022-01-26T04:08:27.000Z" itemprop="datePublished" class="page-time">
+  2022-01-26
 </time>
 
 
@@ -186,7 +186,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除远程分支"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">删除远程分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除本地已合并的分支"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">删除本地已合并的分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除所有本地TAG"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">删除所有本地TAG</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除远程本地TAG"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">删除远程本地TAG</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#新建空白分支"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">新建空白分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#强制拉取并覆盖本地代码"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">强制拉取并覆盖本地代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#加速克隆及下载镜像"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">加速克隆及下载镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置代理"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">设置代理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#存储用户名和密码"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">存储用户名和密码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#提交Commit关联Issue"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">提交Commit关联Issue</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除远程分支"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">删除远程分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除本地已合并的分支"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">删除本地已合并的分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除所有本地TAG"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">删除所有本地TAG</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除远程本地TAG"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">删除远程本地TAG</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#新建空白分支"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">新建空白分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#强制拉取并覆盖本地代码"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">强制拉取并覆盖本地代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#加速克隆及下载镜像"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">加速克隆及下载镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置代理"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">设置代理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看配置"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">查看配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#存储用户名和密码"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">存储用户名和密码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#提交Commit关联Issue"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">提交Commit关联Issue</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#清空commit记录"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">清空commit记录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#提交大型文件-lfs"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">提交大型文件(lfs)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装LFS"><span class="post-toc-number">1.13.1.</span> <span class="post-toc-text">安装LFS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Linux"><span class="post-toc-number">1.13.1.1.</span> <span class="post-toc-text">Linux</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Mac-HomeBrew"><span class="post-toc-number">1.13.1.2.</span> <span class="post-toc-text">Mac(HomeBrew)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Windows"><span class="post-toc-number">1.13.1.3.</span> <span class="post-toc-text">Windows</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用"><span class="post-toc-number">1.13.2.</span> <span class="post-toc-text">使用</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -197,7 +197,7 @@ ga('send', 'pageview');
     <div class="post-card">
         <h1 class="post-card-title">Git杂项命令合集</h1>
         <div class="post-meta">
-            <time class="post-time" title="2021-09-16 12:08:27" datetime="2021-09-16T04:08:27.000Z"  itemprop="datePublished">2021-09-16</time>
+            <time class="post-time" title="2022-01-26 12:08:27" datetime="2022-01-26T04:08:27.000Z"  itemprop="datePublished">2022-01-26</time>
 
             
 
@@ -221,9 +221,22 @@ ga('send', 'pageview');
 <h3 id="新建空白分支"><a href="#新建空白分支" class="headerlink" title="新建空白分支"></a>新建空白分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout --orphan newbranch</span><br><span class="line">$ git rm -rf .</span><br><span class="line">$ git commit --allow-empty -m <span class="string">"[empty|rm] initial commit"</span></span><br></pre></td></tr></table></figure>
 <h3 id="强制拉取并覆盖本地代码"><a href="#强制拉取并覆盖本地代码" class="headerlink" title="强制拉取并覆盖本地代码"></a>强制拉取并覆盖本地代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch --all</span><br><span class="line">$ git reset --hard origin/master</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
 <h3 id="加速克隆及下载镜像"><a href="#加速克隆及下载镜像" class="headerlink" title="加速克隆及下载镜像"></a>加速克隆及下载镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># https://doc.fastgit.org/</span></span><br><span class="line"><span class="comment"># https://gitclone.com/</span></span><br><span class="line"><span class="comment"># https://github.com.cnpmjs.org/</span></span><br><span class="line"><span class="comment"># https://ghproxy.com/</span></span><br><span class="line"><span class="comment"># 免替换</span></span><br><span class="line">$ git config --global url.<span class="string">"https://hub.fastgit.org"</span>.insteadOf https://github.com</span><br></pre></td></tr></table></figure>
-<h3 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全局项目</span></span><br><span class="line">$ git config --global http.proxy 127.0.0.1:1080</span><br><span class="line"><span class="comment"># 单独项目</span></span><br><span class="line">$ git config --<span class="built_in">local</span> http.proxy 127.0.0.1:1080</span><br><span class="line"><span class="comment"># 清除</span></span><br><span class="line">$ git config --global --<span class="built_in">unset</span> http.proxy</span><br></pre></td></tr></table></figure>
+<h3 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全局项目</span></span><br><span class="line">$ git config --global http.proxy 127.0.0.1:1080</span><br><span class="line">$ git config --global https.proxy 127.0.0.1:1080</span><br><span class="line"><span class="comment"># 单独项目</span></span><br><span class="line">$ git config --<span class="built_in">local</span> http.proxy 127.0.0.1:1080</span><br><span class="line">$ git config --<span class="built_in">local</span> https.proxy 127.0.0.1:1080</span><br><span class="line"><span class="comment"># 清除</span></span><br><span class="line">$ git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">$ git config --global --<span class="built_in">unset</span> https.proxy</span><br><span class="line"><span class="comment"># 针对 github.com 的单独配置</span></span><br><span class="line">$ git config --global http.https://github.com.proxy socks5://127.0.0.1:1080</span><br><span class="line">$ git config --global https.https://github.com.proxy socks5://127.0.0.1:1080</span><br><span class="line">$ git config --global --<span class="built_in">unset</span> http.https://github.com.proxy</span><br><span class="line">$ git config --global --<span class="built_in">unset</span> https.https://github.com.proxy</span><br></pre></td></tr></table></figure>
+<h3 id="查看配置"><a href="#查看配置" class="headerlink" title="查看配置"></a>查看配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看所有配置</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config -l</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看用户配置</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global -l </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看系统配置</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --system -l </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看仓库配置</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --<span class="built_in">local</span> -l</span></span><br></pre></td></tr></table></figure>
 <h3 id="存储用户名和密码"><a href="#存储用户名和密码" class="headerlink" title="存储用户名和密码"></a>存储用户名和密码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 缓存时间 默认15分钟  --timeout 自定义时间</span></span><br><span class="line">$ git config --global credential.helper cache</span><br><span class="line">$ git config --global credential.helper <span class="string">'cache --timeout 3600'</span></span><br><span class="line"><span class="comment"># 永久存储</span></span><br><span class="line">$ git config --global credential.helper store</span><br></pre></td></tr></table></figure>
 <h3 id="提交Commit关联Issue"><a href="#提交Commit关联Issue" class="headerlink" title="提交Commit关联Issue"></a>提交Commit关联Issue</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 操作 fixes fixed fix closes close closed</span></span><br><span class="line">$ git commit -m <span class="string">"... &#123;action&#125; #&#123;issue_id&#125;"</span></span><br><span class="line">$ git commit -m <span class="string">"... fixed #1024"</span></span><br></pre></td></tr></table></figure>
+<h3 id="清空commit记录"><a href="#清空commit记录" class="headerlink" title="清空commit记录"></a>清空commit记录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase --root -i</span><br></pre></td></tr></table></figure>
+<h3 id="提交大型文件-lfs"><a href="#提交大型文件-lfs" class="headerlink" title="提交大型文件(lfs)"></a>提交大型文件(lfs)</h3><blockquote>
+<p>Git LFS 是 Github 开发的一个 Git 的扩展，用于实现 Git 对大文件的支持</p>
+</blockquote>
+<h4 id="安装LFS"><a href="#安装LFS" class="headerlink" title="安装LFS"></a>安装LFS</h4><h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install git-lfs</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git lfs install</span></span><br></pre></td></tr></table></figure>
+<h5 id="Mac-HomeBrew"><a href="#Mac-HomeBrew" class="headerlink" title="Mac(HomeBrew)"></a>Mac(HomeBrew)</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> /usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> brew install git-lfs</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git lfs install</span></span><br></pre></td></tr></table></figure>
+<h5 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h5><p><a href="https://github.com/git-lfs/git-lfs/releases" target="_blank" rel="noopener">Windows Installer</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 下载安装上述链接的文件后执行命令</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git lfs install</span></span><br></pre></td></tr></table></figure>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><blockquote>
+<p>使用前需要<code>git lfs install</code>开启功能</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 大文件追踪</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git lfs track <span class="string">"your_large_file"</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 会生成大文件夹追踪记录，并添加提交</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add .gitattributes</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add your_large_file</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">"Add large file"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git push origin master</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 追踪记录</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git lfs ls-files</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 可选<span class="built_in">clone</span>方式</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git lfs <span class="built_in">clone</span></span></span><br></pre></td></tr></table></figure>
 <p>END.</p>
 
         </div>
@@ -233,12 +246,12 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2022-01-20T18:43:14.069Z" itemprop="dateUpdated">2022-01-21 02:43:14</time>
+    Last updated: <time datetime="2022-01-26T06:44:05.109Z" itemprop="dateUpdated">2022-01-26 14:44:05</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2021/09/16/git-miscellaneous-command-set/" target="_blank" rel="external">https://mudew.com/2021/09/16/git-miscellaneous-command-set/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2022/01/26/git-miscellaneous-command-set/" target="_blank" rel="external">https://mudew.com/2022/01/26/git-miscellaneous-command-set/</a>
         
     </div>
     
@@ -269,7 +282,7 @@ ga('send', 'pageview');
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mudew.com/2021/09/16/git-miscellaneous-command-set/&title=《Git杂项命令合集》 — 沐雨露の山头&pic=https://Mudew.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mudew.com/2022/01/26/git-miscellaneous-command-set/&title=《Git杂项命令合集》 — 沐雨露の山头&pic=https://Mudew.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -279,22 +292,22 @@ ga('send', 'pageview');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mudew.com/2021/09/16/git-miscellaneous-command-set/&title=《Git杂项命令合集》 — 沐雨露の山头&source=平平淡淡、知冷知热" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mudew.com/2022/01/26/git-miscellaneous-command-set/&title=《Git杂项命令合集》 — 沐雨露の山头&source=平平淡淡、知冷知热" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mudew.com/2021/09/16/git-miscellaneous-command-set/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mudew.com/2022/01/26/git-miscellaneous-command-set/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git杂项命令合集》 — 沐雨露の山头&url=https://mudew.com/2021/09/16/git-miscellaneous-command-set/&via=https://Mudew.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git杂项命令合集》 — 沐雨露の山头&url=https://mudew.com/2022/01/26/git-miscellaneous-command-set/&via=https://Mudew.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mudew.com/2021/09/16/git-miscellaneous-command-set/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mudew.com/2022/01/26/git-miscellaneous-command-set/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -314,21 +327,14 @@ ga('send', 'pageview');
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2021/11/23/millet-ax9000-toss-record/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">小米AX9000折腾记录</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2021/09/15/tensorflow-v1-to-v2-compatibility-guide/" id="post-next" class="post-nav-link">
+      <a href="/2022/01/21/android-device-reverse-analysis-field-guide/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">TensorFlow v1到v2版本兼容指南</h4>
+        <h4 class="title">安卓设备逆向分析字段指南</h4>
       </a>
     </div>
   
@@ -424,7 +430,7 @@ ga('send', 'pageview');
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mudew.com/2021/09/16/git-miscellaneous-command-set/&title=《Git杂项命令合集》 — 沐雨露の山头&pic=https://Mudew.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mudew.com/2022/01/26/git-miscellaneous-command-set/&title=《Git杂项命令合集》 — 沐雨露の山头&pic=https://Mudew.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -434,22 +440,22 @@ ga('send', 'pageview');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mudew.com/2021/09/16/git-miscellaneous-command-set/&title=《Git杂项命令合集》 — 沐雨露の山头&source=平平淡淡、知冷知热" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mudew.com/2022/01/26/git-miscellaneous-command-set/&title=《Git杂项命令合集》 — 沐雨露の山头&source=平平淡淡、知冷知热" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mudew.com/2021/09/16/git-miscellaneous-command-set/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mudew.com/2022/01/26/git-miscellaneous-command-set/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git杂项命令合集》 — 沐雨露の山头&url=https://mudew.com/2021/09/16/git-miscellaneous-command-set/&via=https://Mudew.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git杂项命令合集》 — 沐雨露の山头&url=https://mudew.com/2022/01/26/git-miscellaneous-command-set/&via=https://Mudew.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mudew.com/2021/09/16/git-miscellaneous-command-set/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mudew.com/2022/01/26/git-miscellaneous-command-set/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -460,7 +466,7 @@ ga('send', 'pageview');
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://mudew.com/2021/09/16/git-miscellaneous-command-set/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://mudew.com/2022/01/26/git-miscellaneous-command-set/" alt="微信分享二维码">
 </div>
 
 
