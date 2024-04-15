@@ -2137,4 +2137,64 @@
         <tag>threading</tag>
       </tags>
   </entry>
+  <entry>
+    <title>限制Docker容器上下行带宽</title>
+    <url>/2024/04/15/%E9%99%90%E5%88%B6Docker%E5%AE%B9%E5%99%A8%E4%B8%8A%E4%B8%8B%E8%A1%8C%E5%B8%A6%E5%AE%BD/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在某些国内云服务器商，如果服务器带宽较小或者有Docker容器会跑满服务器带宽。<br>持续高上下行，可能会收到一些服务器警告，或者服务器因为高流量怀疑被攻击而被封禁。<br>这个时候需要限制一些流量的进出带宽，以下针对Linux环境操作。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="安装WonderShaper"><a href="#安装WonderShaper" class="headerlink" title="安装WonderShaper"></a>安装WonderShaper</h3><p>WonderShaper是一个允许用户限制一个或多个网络适配器带宽的脚本，依赖于tc流量控制工具。</p>
+
+  <div class="note p-4 mb-4 rounded-small warning">
+    <p>warning 以下命令都基于root权限执行，否则请使用sudo前缀执行。</p>
+
+  </div>
+
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取仓库</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git <span class="built_in">clone</span> https://github.com/magnific0/wondershaper.git</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">测试</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> wondershaper &amp;&amp; ./wondershaper -h</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装到系统</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">make install</span></span><br></pre></td></tr></table></figure></div>
+
+
+  <div class="note p-4 mb-4 rounded-small warning">
+    <p>warning 注意一些服务器未安装tc流量控制工具，需要进行额外安装。</p>
+
+  </div>
+
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Centos 8</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">yum install -y iproute-tc</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Ubuntu</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">apt-get install iproute2</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="使用WonderShaper限流"><a href="#使用WonderShaper限流" class="headerlink" title="使用WonderShaper限流"></a>使用WonderShaper限流</h3><h4 id="查看需要的网卡名称"><a href="#查看需要的网卡名称" class="headerlink" title="查看需要的网卡名称"></a>查看需要的网卡名称</h4><blockquote>
+<p>这里以docker的网卡为例，当然有需要限制其他网卡同理。</p>
+</blockquote>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ip addr</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ip addr show</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="设置网卡上下行"><a href="#设置网卡上下行" class="headerlink" title="设置网卡上下行"></a>设置网卡上下行</h4><blockquote>
+<p>docker0是网卡名称，<code>-d</code>下行、<code>-u</code>上行，单位为Kbps。</p>
+</blockquote>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">限制docker0网卡为2M的上下行</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">wondershaper -a docker0 -d 2048 -u 2048</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">只限制下行</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">wondershaper -a docker0 -d 2048</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">只限制上行</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">wondershaper -a docker0 -u 2048</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="查看网卡状态"><a href="#查看网卡状态" class="headerlink" title="查看网卡状态"></a>查看网卡状态</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">wondershaper -s -a docker0</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="恢复网卡上下行限制"><a href="#恢复网卡上下行限制" class="headerlink" title="恢复网卡上下行限制"></a>恢复网卡上下行限制</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">wondershaper -c -a docker0</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="使用iftop查看限流状态"><a href="#使用iftop查看限流状态" class="headerlink" title="使用iftop查看限流状态"></a>使用iftop查看限流状态</h2><p>iftop是监控某个应用或网卡流量的工具。<br>这里只是为了方便终端查看。也有其他同类型的，比如nload、nethogs等等。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><blockquote>
+<p>这里仅以Centos为例</p>
+</blockquote>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">yum install -y iftop</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><h4 id="显示本机所有进程的进出流量"><a href="#显示本机所有进程的进出流量" class="headerlink" title="显示本机所有进程的进出流量"></a>显示本机所有进程的进出流量</h4><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">iftop</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="查看指定网卡的进出流量"><a href="#查看指定网卡的进出流量" class="headerlink" title="查看指定网卡的进出流量"></a>查看指定网卡的进出流量</h4><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">iftop -i docker0</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="显示端口信息"><a href="#显示端口信息" class="headerlink" title="显示端口信息"></a>显示端口信息</h4><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">iftop -i docker0 -P</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><blockquote>
+<p>其他工具: <a class="link"   href="https://hub.docker.com/r/lihaixin/vnstat" >vnstat <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+<p>本环境是因为没有多余的容器，所以直接限制的docker0网卡不会影响到其他服务。</p>
+<p>有其他单独需求，限制单个容器的虚拟网卡应该同理。</p>
+]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
 </search>
