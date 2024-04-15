@@ -2140,11 +2140,11 @@
   <entry>
     <title>限制Docker容器上下行带宽</title>
     <url>/2024/04/15/%E9%99%90%E5%88%B6Docker%E5%AE%B9%E5%99%A8%E4%B8%8A%E4%B8%8B%E8%A1%8C%E5%B8%A6%E5%AE%BD/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在某些国内云服务器商，如果服务器带宽较小或者有Docker容器会跑满服务器带宽。<br>持续高上下行，可能会收到一些服务器警告，或者服务器因为高流量怀疑被攻击而被封禁。<br>这个时候需要限制一些流量的进出带宽，以下针对Linux环境操作。</p>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在某些国内云服务器商，如果服务器带宽较小或者有Docker容器会跑满服务器带宽。<br>持续的高上下行，可能会收到一些服务器警告，或者怀疑被攻击而被封禁。<br>这个时候需要限制一些流量的进出带宽，以下针对Linux环境操作。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="安装WonderShaper"><a href="#安装WonderShaper" class="headerlink" title="安装WonderShaper"></a>安装WonderShaper</h3><p>WonderShaper是一个允许用户限制一个或多个网络适配器带宽的脚本，依赖于tc流量控制工具。</p>
 
   <div class="note p-4 mb-4 rounded-small warning">
-    <p>warning 以下命令都基于root权限执行，否则请使用sudo前缀执行。</p>
+    <p>以下命令都基于root权限执行，否则请使用sudo前缀执行。</p>
 
   </div>
 
@@ -2152,7 +2152,7 @@
 
 
   <div class="note p-4 mb-4 rounded-small warning">
-    <p>warning 注意一些服务器未安装tc流量控制工具，需要进行额外安装。</p>
+    <p>注意一些服务器未安装tc流量控制工具，需要进行额外安装。</p>
 
   </div>
 
@@ -2164,7 +2164,7 @@
 <div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ip addr</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ip addr show</span></span><br></pre></td></tr></table></figure></div>
 
 <h4 id="设置网卡上下行"><a href="#设置网卡上下行" class="headerlink" title="设置网卡上下行"></a>设置网卡上下行</h4><blockquote>
-<p>docker0是网卡名称，<code>-d</code>下行、<code>-u</code>上行，单位为Kbps。</p>
+<p><code>docker0</code>为网卡名称，<code>-d</code>为下行、<code>-u</code>为上行，单位为<code>Kbps</code></p>
 </blockquote>
 <div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">限制docker0网卡为2M的上下行</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">wondershaper -a docker0 -d 2048 -u 2048</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">只限制下行</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">wondershaper -a docker0 -d 2048</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">只限制上行</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">wondershaper -a docker0 -u 2048</span></span><br></pre></td></tr></table></figure></div>
 
