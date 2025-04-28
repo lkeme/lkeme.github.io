@@ -3,13 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="keywords" content="博客, 生活, 技术, 记录">
     
     <meta name="author" content="Lkeme">
     <!-- preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    
+        
+        
+        
+            <link rel="preconnect" href="https://registry.npmmirror.com" crossorigin>
+        
     
     <!--- Seo Part-->
     
@@ -18,24 +24,19 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="前言清一色的开篇，目的只为水一篇文章…这次是Bilibili Web端直播心跳API一个加解密算法去年写的东西，放着一直没怎么使用，一直懒就没写…以下所有数据都脱敏处理或者打码，不要作测试数据…   Bilibili Live如果研究的朋友，可能都抓过包看过数据包的情况有两个关键请求，分别为reportEnterRoom和reportHeartBeat两个请求在不同状态下带入一个加密参数 s">
+    
+    
+        
+        <meta name="description" content="沐雨露の山头">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Bilibili Web端直播加密心跳请求解析">
 <meta property="og:url" content="https://mudew.com/2020/07/22/Bilibili-Web%E7%AB%AF%E7%9B%B4%E6%92%AD%E5%8A%A0%E5%AF%86%E5%BF%83%E8%B7%B3%E8%AF%B7%E6%B1%82%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="沐雨露の山头">
-<meta property="og:description" content="前言清一色的开篇，目的只为水一篇文章…这次是Bilibili Web端直播心跳API一个加解密算法去年写的东西，放着一直没怎么使用，一直懒就没写…以下所有数据都脱敏处理或者打码，不要作测试数据…   Bilibili Live如果研究的朋友，可能都抓过包看过数据包的情况有两个关键请求，分别为reportEnterRoom和reportHeartBeat两个请求在不同状态下带入一个加密参数 s">
+<meta property="og:description" content="沐雨露の山头">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2020/07/22/EU23Iukrq6RPdFW.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/22/r5zImuAYaftlUWi.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/22/dA59OUMBqXvpJli.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/22/MEUyAonHSXrzGD6.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/22/cIZNMawX2UbWzDo.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/22/kb4Nc8KCw1jaOpd.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/22/CPiygfxepGEsb5k.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/22/gMbwhPefB1d3j75.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/22/AMqcRxy4K2wmDJr.png">
+<meta property="og:image" content="https://mudew.com/static/images/redefine-og.webp">
 <meta property="article:published_time" content="2020-07-22T05:11:38.000Z">
-<meta property="article:modified_time" content="2024-05-15T10:51:35.410Z">
+<meta property="article:modified_time" content="2025-04-28T03:58:37.554Z">
 <meta property="article:author" content="Lkeme">
 <meta property="article:tag" content="Bilibili">
 <meta property="article:tag" content="Live">
@@ -43,7 +44,7 @@
 <meta property="article:tag" content="Wasm">
 <meta property="article:tag" content="Js">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2020/07/22/EU23Iukrq6RPdFW.png">
+<meta name="twitter:image" content="https://mudew.com/static/images/redefine-og.webp">
     
     
         <!-- Google tag (gtag.js) -->
@@ -57,22 +58,19 @@
         </script>
     
     <!--- Icon Part-->
-    <link rel="icon" type="image/png" href="/images/static/favicon.ico" sizes="192x192">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/static/favicon.ico">
+    <link rel="icon" type="image/png" href="/static/images/theme/favicon.ico" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/theme/favicon.ico">
     <meta name="theme-color" content="#A31F34">
-    <link rel="shortcut icon" href="/images/static/favicon.ico">
+    <link rel="shortcut icon" href="/static/images/theme/favicon.ico">
     <!--- Page Info-->
     
     <title>
         
-            Bilibili Web端直播加密心跳请求解析 -
+            Bilibili Web端直播加密心跳请求解析 | 沐雨露の山头
         
-        沐雨露の山头
     </title>
 
-    
-<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
-
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/fonts/Chillax/chillax.css">
 
     <!--- Inject Part-->
     
@@ -81,9 +79,68 @@
     
             
     
+            
+                
+                    <link rel="stylesheet" type="text/css" href="/static/css/Capoo.css">
+                
+    
 
     
-        <style>
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/css/build/tailwind.css">
+    
+
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/fonts/GeistMono/geist-mono.css">
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/fonts/Geist/geist.css">
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+        <script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/anime.min.js" ></script>
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"mudew.com","root":"/","language":"zh-CN","path":"search.json"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["SVIP+"]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"all_rights_reserved"},"lazyload":true,"pangu_js":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/static/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":"#1890ff","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":"欢迎来到沐雨露の山头"},"open_graph":{"enable":true,"image":"/static/images/redefine-og.webp","description":"沐雨露の山头"},"google_analytics":{"enable":true,"id":"G-GK3CLHBRH8"}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/static/images/theme/light.jpg","dark":"/static/images/theme/dark.jpg"},"title":"懒若新生","subtitle":{"text":["平平淡淡、知冷知热"],"hitokoto":{"enable":false,"show_author":true,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/lkeme","instagram":null,"zhihu":null,"twitter":null,"email":"Useri@live.cn"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":true},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Links":{"icon":"fa-regular fa-link","submenus":{"MSTOOL":"/html/mstool","Star列表":"/some-stars"}},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://github.com/lkeme","Blog":"https://mudew.com","Friends":"/friends"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":3,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"Welcome to Mudew's Blog","show_on_mobile":true,"links":{"标签":{"path":"/tags","icon":"fa-regular fa-tags"},"分类":{"path":"/categories","icon":"fa-regular fa-folder"},"静语":{"path":"/essays","icon":"fa-regular fa-comment-dots"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":5}},"footerStart":"2018/02/21 11:10:24"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/fontawesome/brands.min.css">
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/fontawesome/solid.min.css">
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/fontawesome/regular.min.css">
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="沐雨露の山头" type="application/atom+xml">
+</head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
     :root {
         --preloader-background-color: #fff;
         --preloader-text-color: #000;
@@ -151,12 +208,9 @@
 </style>
 
 <div class="preloader">
-    
-<script src="/js/libs/anime.min.js"></script>
-
-    <h1 class="ml13">
-        沐雨露の山头
-    </h1>
+    <h2 class="ml13">
+        欢迎来到沐雨露の山头
+    </h2>
     <script>
         var textWrapper = document.querySelector('.ml13');
         // Split text into words
@@ -174,24 +228,30 @@
             textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
         });
 
-
-        anime.timeline({loop: true})
+        var animation = anime.timeline({ loop: true })
             .add({
                 targets: '.ml13 .letter',
-                translateY: [100,0],
+                translateY: [20, 0],
                 translateZ: 0,
-                opacity: [0,1],
+                opacity: [0, 1],
+                filter: ['blur(5px)', 'blur(0px)'],
                 easing: "easeOutExpo",
-                duration: 1400,
-                delay: (el, i) => 300 + 30 * i
-            }).add({
-            targets: '.ml13 .letter',
-            translateY: [0,-100],
-            opacity: [1,0],
-            easing: "easeInExpo",
-            duration: 1200,
-            delay: (el, i) => 100 + 30 * i
-        });
+                duration: 1200,
+                delay: (el, i) => 300 + 20 * i,
+            })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [0, -20],
+                opacity: [1, 0],
+                filter: ['blur(0px)', 'blur(5px)'],
+                easing: "easeInExpo",
+                duration: 1000,
+                delay: (el, i) => 15 * i,
+                complete: function() {
+                    hidePreloader();
+                }
+            }, '-=700');
+
 
         let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
 
@@ -214,103 +274,31 @@
         }
 
         window.addEventListener('load', function () {
-            hidePreloaderAfterTimeout(1000); // Hide after 1000 milliseconds once the window has loaded
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
         });
 
-        // Backup failsafe: Hide preloader after a maximum of 5000 milliseconds, regardless of the window load event
-        hidePreloaderAfterTimeout(5000);
-
-        function hidePreloaderAfterTimeout(delay) {
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
             setTimeout(function () {
-                var preloader = document.querySelector('.preloader');
-                preloader.style.opacity = '0';
-                setTimeout(function () {
-                    preloader.style.display = 'none';
-                }, 200);
-            }, delay);
+                preloader.style.display = 'none';
+            }, 200);
         }
     </script>
 </div>
-    
-
-    
-<link rel="stylesheet" href="/css/style.css">
-
-
-    
-        
-<link rel="stylesheet" href="/assets/build/styles.css">
-
-    
-
-    
-<link rel="stylesheet" href="/fonts/fonts.css">
-
-    
-<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
-
-    <!--- Font Part-->
-    
-    
-    
-    
-
-
-    <script id="hexo-configurations">
-    window.config = {"hostname":"mudew.com","root":"/","language":"zh-CN","path":"search.xml"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"5rem","h2":"4rem","h3":"2.8rem","h4":"2.5rem","h5":"2.2rem","h6":"2rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["SVIP+"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":true,"id":"G-GK3CLHBRH8"}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/static/light.jpg","dark":"/images/static/dark.jpg"},"title":"懒若新生","subtitle":{"text":["平平淡淡、知冷知热"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/lkeme","instagram":null,"zhihu":null,"twitter":null,"email":"Useri@live.cn"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.1","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://github.com/lkeme","Blog":"https://mudew.com","Friends":"/friends"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"标签":{"path":"/tags","icon":"fa-regular fa-tags"},"分类":{"path":"/categories","icon":"fa-regular fa-folder"},"静语":{"path":"/essays","icon":"fa-regular fa-comment-dots"}}},"article_date_format":"YYYY-MM-DD","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2018/02/21 11:10:24"};
-    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
-    window.data = {"masonry":false};
-  </script>
-    
-    <!--- Fontawesome Part-->
-    
-<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
-
-    
-<link rel="stylesheet" href="/fontawesome/brands.min.css">
-
-    
-<link rel="stylesheet" href="/fontawesome/solid.min.css">
-
-    
-<link rel="stylesheet" href="/fontawesome/regular.min.css">
-
-    
-    
-    
-    
-<meta name="generator" content="Hexo 7.1.1"></head>
-
-
-<body>
-<div class="progress-bar-container">
-    
-
-    
-        <span class="pjax-progress-bar"></span>
-<!--        <span class="swup-progress-icon">-->
-<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
-<!--        </span>-->
-    
-</div>
-
 
 <main class="page-container" id="swup">
 
-    
+	
 
-    <div class="main-content-container">
-
-
-        <div class="main-content-header">
-            <header class="navbar-container px-6 md:px-12">
-
-    <div class="navbar-content ">
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
         <div class="left">
             
-                <a class="logo-image" href="/">
-                    <img src="/images/static/favicon.ico">
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/static/images/theme/favicon.ico" class="w-full h-full rounded-sm">
                 </a>
             
             <a class="logo-title" href="/">
@@ -356,6 +344,39 @@
                                 </a>
 
                                 <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-link fa-fw"></i>
+                                    链接
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/html/mstool">
+                                                    MSTOOL
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/some-stars">
+                                                    STAR列表
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
                                 
                             </li>
                     
@@ -425,7 +446,7 @@
     </div>
 
     <!-- Mobile sheet -->
-    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
         <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
             
                 
@@ -465,6 +486,40 @@
                         </a>
                         
 
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-Links"
+                        >
+                            <span>
+                                链接
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-Links">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/html/mstool">MSTOOL</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/some-stars">STAR列表</a>
+                                    </div>
+                                
+                            </div>
                         
                     </li>
             
@@ -570,40 +625,37 @@
 </header>
 
 
-        </div>
+		</div>
 
-        <div class="main-content-body">
+		<div class="main-content-body transition-fade-up">
+			
 
-            
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
 
-            <div class="main-content">
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Bilibili Web端直播加密心跳请求解析</h1>
+			</div>
+			
+		</div>
 
-                
-                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
-    <div class="article-content-container">
-
-        <div class="article-title relative w-full">
-            
-                <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">Bilibili Web端直播加密心跳请求解析</h1>
-                </div>
-            
-            </div>
-
-        
-            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
-                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
-                    <img src="/images/static/avatar.jpg">
-                </div>
-                <div class="info flex flex-col justify-between">
-                    <div class="author flex items-center">
-                        <span class="name text-default-text-color text-lg font-semibold">Lkeme</span>
-                        
-                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">SVIP+</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/static/images/theme/avatar.jpg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Lkeme</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">SVIP+</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
         <span class="desktop">2020-07-22 13:11:38</span>
@@ -613,8 +665,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-05-15 18:51:35</span>
-            <span class="mobile">2024-05-15 18:51:35</span>
+            <span class="desktop">2025-04-28 11:58:37</span>
+            <span class="mobile">2025-04-28 11:58:37</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -683,19 +735,19 @@
     
 </div>
 
-                    </div>
-                </div>
-            </div>
-        
+				</div>
+			</div>
+		</div>
+		
 
-        
+		
 
 
-        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>清一色的开篇，目的只为水一篇文章…<br>这次是Bilibili Web端直播心跳API一个加解密算法<br>去年写的东西，放着一直没怎么使用，一直懒就没写…<br>以下所有数据都脱敏处理或者打码，不要作测试数据…  </p>
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>清一色的开篇，目的只为水一篇文章…<br>这次是Bilibili Web端直播心跳API一个加解密算法<br>去年写的东西，放着一直没怎么使用，一直懒就没写…<br>以下所有数据都脱敏处理或者打码，不要作测试数据…  </p>
 <h2 id="Bilibili-Live"><a href="#Bilibili-Live" class="headerlink" title="Bilibili Live"></a>Bilibili Live</h2><p>如果研究的朋友，可能都抓过包看过数据包的情况<br>有两个关键请求，分别为<code>reportEnterRoom</code>和<code>reportHeartBeat</code><br>两个请求在不同状态下带入一个加密参数 <code>s</code>  </p>
 <h3 id="reportEnterRoom"><a href="#reportEnterRoom" class="headerlink" title="reportEnterRoom"></a>reportEnterRoom</h3><blockquote>
-<p><a class="link"   target="_blank" rel="noopener" href="https://live-trace.bilibili.com/xlive/data-interface/v1/x25Kn/E" >https://live-trace.bilibili.com/xlive/data-interface/v1/x25Kn/E <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>E请求在心跳流程中只请求一次，进入房间  </p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://live-trace.bilibili.com/xlive/data-interface/v1/x25Kn/E" >https://live-trace.bilibili.com/xlive/data-interface/v1/x25Kn/E<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br>E请求在心跳流程中只请求一次，进入房间  </p>
 </blockquote>
 <p><img  
                      lazyload
@@ -703,16 +755,16 @@
                      data-src="https://i.loli.net/2020/07/22/EU23Iukrq6RPdFW.png"
                      
                 ></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># E 1</span><br><span class="line"></span><br><span class="line">id: [1,145,0,123456]</span><br><span class="line">device: [&quot;AUTO3915894629123456&quot;,&quot;799c882c-06de-4bfe-a358-98a76dccfa07&quot;]</span><br><span class="line">ts: 1595348574562</span><br><span class="line">is_patch: 0</span><br><span class="line">heart_beat: []</span><br><span class="line">ua: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.64</span><br><span class="line">csrf_token: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">csrf: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">visit_id: </span><br><span class="line"></span><br><span class="line">&#123;&quot;code&quot;:0,&quot;message&quot;:&quot;0&quot;,&quot;ttl&quot;:1,&quot;data&quot;:&#123;&quot;timestamp&quot;:1595348575,&quot;heartbeat_interval&quot;:300,&quot;secret_key&quot;:&quot;seacasdgyijfhofiuxoannn&quot;,&quot;secret_rule&quot;:[2,5,1,4],&quot;patch_status&quot;:2&#125;&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># E 1</span><br><span class="line"></span><br><span class="line">id: [1,145,0,123456]</span><br><span class="line">device: [&quot;AUTO3915894629123456&quot;,&quot;799c882c-06de-4bfe-a358-98a76dccfa07&quot;]</span><br><span class="line">ts: 1595348574562</span><br><span class="line">is_patch: 0</span><br><span class="line">heart_beat: []</span><br><span class="line">ua: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.64</span><br><span class="line">csrf_token: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">csrf: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">visit_id: </span><br><span class="line"></span><br><span class="line">&#123;&quot;code&quot;:0,&quot;message&quot;:&quot;0&quot;,&quot;ttl&quot;:1,&quot;data&quot;:&#123;&quot;timestamp&quot;:1595348575,&quot;heartbeat_interval&quot;:300,&quot;secret_key&quot;:&quot;seacasdgyijfhofiuxoannn&quot;,&quot;secret_rule&quot;:[2,5,1,4],&quot;patch_status&quot;:2&#125;&#125;</span><br></pre></td></tr></table></figure></div>
 <blockquote>
 <p>is_patch &#x3D;&#x3D; 0 -&gt; heart_beat &#x3D;&#x3D; [] 一般直接使用这个</p>
 </blockquote>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># E 2</span><br><span class="line">is_patch: 1</span><br><span class="line">heart_beat: [&#123;&quot;s&quot;:&quot;jjh64tcxjjjd062s2sfxfkrcey63a0z1jc9hrkjyy4d9436fib9wj0pynwmncpeib9i4ckjxmnkw1e0h41mn86fir47yzcafrspzrp05i9rnf0dbje6ndcsk3f1bm4th&quot;,&quot;id&quot;:&quot;[6,235,1,123456]&quot;,&quot;device&quot;:&quot;[\&quot;AUTO3915894629123456\&quot;,\&quot;7b9faf1a-cdd0-45a7-8355-e68972550341\&quot;]&quot;,&quot;ets&quot;:1595248610,&quot;benchmark&quot;:&quot;seacasdgyijfhofiuxoannn&quot;,&quot;time&quot;:285,&quot;ts&quot;:1595248894609,&quot;ua&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.64&quot;&#125;]</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># E 2</span><br><span class="line">is_patch: 1</span><br><span class="line">heart_beat: [&#123;&quot;s&quot;:&quot;jjh64tcxjjjd062s2sfxfkrcey63a0z1jc9hrkjyy4d9436fib9wj0pynwmncpeib9i4ckjxmnkw1e0h41mn86fir47yzcafrspzrp05i9rnf0dbje6ndcsk3f1bm4th&quot;,&quot;id&quot;:&quot;[6,235,1,123456]&quot;,&quot;device&quot;:&quot;[\&quot;AUTO3915894629123456\&quot;,\&quot;7b9faf1a-cdd0-45a7-8355-e68972550341\&quot;]&quot;,&quot;ets&quot;:1595248610,&quot;benchmark&quot;:&quot;seacasdgyijfhofiuxoannn&quot;,&quot;time&quot;:285,&quot;ts&quot;:1595248894609,&quot;ua&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.64&quot;&#125;]</span><br></pre></td></tr></table></figure></div>
 <blockquote>
 <p>is_patch &#x3D;&#x3D; 1 -&gt; heart_beat &#x3D;&#x3D; [********] 短时间内重复进出直播间触发</p>
 </blockquote>
 <h3 id="reportHeartBeat"><a href="#reportHeartBeat" class="headerlink" title="reportHeartBeat"></a>reportHeartBeat</h3><blockquote>
-<p><a class="link"   target="_blank" rel="noopener" href="https://live-trace.bilibili.com/xlive/data-interface/v1/x25Kn/X" >https://live-trace.bilibili.com/xlive/data-interface/v1/x25Kn/X <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>X请求在心跳流程中按次循环，必须先E再循环请求X  </p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://live-trace.bilibili.com/xlive/data-interface/v1/x25Kn/X" >https://live-trace.bilibili.com/xlive/data-interface/v1/x25Kn/X<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br>X请求在心跳流程中按次循环，必须先E再循环请求X  </p>
 </blockquote>
 <p><img  
                      lazyload
@@ -720,7 +772,7 @@
                      data-src="https://i.loli.net/2020/07/22/r5zImuAYaftlUWi.png"
                      
                 ></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"># X 1</span><br><span class="line">s: d6fb6f7fdef8de9262e2b27ff6ef185a8d2ff72ce68f0a3648797e146bd655d6f5aab5e8f46826cde306267de149ae439a8ed6c3ce1e22220f2af498be1d144f</span><br><span class="line">id: [1,145,1,123456]</span><br><span class="line">device: [&quot;AUTO3915894629123456&quot;,&quot;799c882c-06de-4bfe-a358-98a76dccfa07&quot;]</span><br><span class="line">ets: 1595348575</span><br><span class="line">benchmark: seacasdgyijfhofiuxoannn</span><br><span class="line">time: 300</span><br><span class="line">ts: 1595348874823</span><br><span class="line">ua: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.64</span><br><span class="line">csrf_token: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">csrf: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">visit_id: k5fj7uhwfn4</span><br><span class="line"></span><br><span class="line">&#123;&quot;code&quot;:0,&quot;message&quot;:&quot;0&quot;,&quot;ttl&quot;:1,&quot;data&quot;:&#123;&quot;heartbeat_interval&quot;:300,&quot;timestamp&quot;:1595348875,&quot;secret_rule&quot;:[2,5,1,4],&quot;secret_key&quot;:&quot;seacasdgyijfhofiuxoannn&quot;&#125;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># X 2</span><br><span class="line">s: 8323ed71eac733c50956f46fbe10023826270197ee4af09c6ef036c1a798005298036de230bfc8ecde2e4018ee232884a2a813d89d12d701ab16f5c23d685ec9</span><br><span class="line">id: [1,145,2,123456]</span><br><span class="line">device: [&quot;AUTO3915894629123456&quot;,&quot;799c882c-06de-4bfe-a358-98a76dccfa07&quot;]</span><br><span class="line">ets: 1595348875</span><br><span class="line">benchmark: seacasdgyijfhofiuxoannn</span><br><span class="line">time: 300</span><br><span class="line">ts: 1595349175008</span><br><span class="line">ua: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.64</span><br><span class="line">csrf_token: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">csrf: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">visit_id: k5fj7uhwfn4</span><br><span class="line"></span><br><span class="line">&#123;&quot;code&quot;:0,&quot;message&quot;:&quot;0&quot;,&quot;ttl&quot;:1,&quot;data&quot;:&#123;&quot;heartbeat_interval&quot;:300,&quot;timestamp&quot;:1595349175,&quot;secret_rule&quot;:[2,5,1,4],&quot;secret_key&quot;:&quot;seacasdgyijfhofiuxoannn&quot;&#125;&#125;</span><br><span class="line"> </span><br><span class="line"># X 3</span><br><span class="line">s: 369b18326a99fff5b5556da14039f807f21030e390de6f204a53d0cab0cccba7f0d0bcc60347f8fc43d9905be775f0c0fcdab4dd9bd6c8a52465f4a19b35cf36</span><br><span class="line">id: [1,145,3,123456]</span><br><span class="line">device: [&quot;AUTO3915894629123456&quot;,&quot;799c882c-06de-4bfe-a358-98a76dccfa07&quot;]</span><br><span class="line">ets: 1595349175</span><br><span class="line">benchmark: seacasdgyijfhofiuxoannn</span><br><span class="line">time: 300</span><br><span class="line">ts: 1595349475071</span><br><span class="line">ua: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.64</span><br><span class="line">csrf_token: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">csrf: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">visit_id: k5fj7uhwfn4</span><br><span class="line"></span><br><span class="line">&#123;&quot;code&quot;:0,&quot;message&quot;:&quot;0&quot;,&quot;ttl&quot;:1,&quot;data&quot;:&#123;&quot;heartbeat_interval&quot;:300,&quot;timestamp&quot;:1595349475,&quot;secret_rule&quot;:[2,5,1,4],&quot;secret_key&quot;:&quot;seacasdgyijfhofiuxoannn&quot;&#125;&#125;</span><br><span class="line"></span><br><span class="line"># X 4</span><br><span class="line">s: b9486ab176a70d444c7e34aa2f35c09270365fd15f5fc023036a426165d38a6fa831cde17de8a37007c53fcb204cfc0155167647c42bca263007068a42774592</span><br><span class="line">id: [1,145,4,123456]</span><br><span class="line">device: [&quot;AUTO3915894629123456&quot;,&quot;799c882c-06de-4bfe-a358-98a76dccfa07&quot;]</span><br><span class="line">ets: 1595349475</span><br><span class="line">benchmark: seacasdgyijfhofiuxoannn</span><br><span class="line">time: 300</span><br><span class="line">ts: 1595349775262</span><br><span class="line">ua: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.64</span><br><span class="line">csrf_token: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">csrf: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">visit_id: k5fj7uhwfn4</span><br><span class="line"></span><br><span class="line">&#123;&quot;code&quot;:0,&quot;message&quot;:&quot;0&quot;,&quot;ttl&quot;:1,&quot;data&quot;:&#123;&quot;heartbeat_interval&quot;:300,&quot;timestamp&quot;:1595349775,&quot;secret_rule&quot;:[2,5,1,4],&quot;secret_key&quot;:&quot;seacasdgyijfhofiuxoannn&quot;&#125;&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"># X 1</span><br><span class="line">s: d6fb6f7fdef8de9262e2b27ff6ef185a8d2ff72ce68f0a3648797e146bd655d6f5aab5e8f46826cde306267de149ae439a8ed6c3ce1e22220f2af498be1d144f</span><br><span class="line">id: [1,145,1,123456]</span><br><span class="line">device: [&quot;AUTO3915894629123456&quot;,&quot;799c882c-06de-4bfe-a358-98a76dccfa07&quot;]</span><br><span class="line">ets: 1595348575</span><br><span class="line">benchmark: seacasdgyijfhofiuxoannn</span><br><span class="line">time: 300</span><br><span class="line">ts: 1595348874823</span><br><span class="line">ua: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.64</span><br><span class="line">csrf_token: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">csrf: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">visit_id: k5fj7uhwfn4</span><br><span class="line"></span><br><span class="line">&#123;&quot;code&quot;:0,&quot;message&quot;:&quot;0&quot;,&quot;ttl&quot;:1,&quot;data&quot;:&#123;&quot;heartbeat_interval&quot;:300,&quot;timestamp&quot;:1595348875,&quot;secret_rule&quot;:[2,5,1,4],&quot;secret_key&quot;:&quot;seacasdgyijfhofiuxoannn&quot;&#125;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># X 2</span><br><span class="line">s: 8323ed71eac733c50956f46fbe10023826270197ee4af09c6ef036c1a798005298036de230bfc8ecde2e4018ee232884a2a813d89d12d701ab16f5c23d685ec9</span><br><span class="line">id: [1,145,2,123456]</span><br><span class="line">device: [&quot;AUTO3915894629123456&quot;,&quot;799c882c-06de-4bfe-a358-98a76dccfa07&quot;]</span><br><span class="line">ets: 1595348875</span><br><span class="line">benchmark: seacasdgyijfhofiuxoannn</span><br><span class="line">time: 300</span><br><span class="line">ts: 1595349175008</span><br><span class="line">ua: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.64</span><br><span class="line">csrf_token: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">csrf: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">visit_id: k5fj7uhwfn4</span><br><span class="line"></span><br><span class="line">&#123;&quot;code&quot;:0,&quot;message&quot;:&quot;0&quot;,&quot;ttl&quot;:1,&quot;data&quot;:&#123;&quot;heartbeat_interval&quot;:300,&quot;timestamp&quot;:1595349175,&quot;secret_rule&quot;:[2,5,1,4],&quot;secret_key&quot;:&quot;seacasdgyijfhofiuxoannn&quot;&#125;&#125;</span><br><span class="line"> </span><br><span class="line"># X 3</span><br><span class="line">s: 369b18326a99fff5b5556da14039f807f21030e390de6f204a53d0cab0cccba7f0d0bcc60347f8fc43d9905be775f0c0fcdab4dd9bd6c8a52465f4a19b35cf36</span><br><span class="line">id: [1,145,3,123456]</span><br><span class="line">device: [&quot;AUTO3915894629123456&quot;,&quot;799c882c-06de-4bfe-a358-98a76dccfa07&quot;]</span><br><span class="line">ets: 1595349175</span><br><span class="line">benchmark: seacasdgyijfhofiuxoannn</span><br><span class="line">time: 300</span><br><span class="line">ts: 1595349475071</span><br><span class="line">ua: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.64</span><br><span class="line">csrf_token: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">csrf: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">visit_id: k5fj7uhwfn4</span><br><span class="line"></span><br><span class="line">&#123;&quot;code&quot;:0,&quot;message&quot;:&quot;0&quot;,&quot;ttl&quot;:1,&quot;data&quot;:&#123;&quot;heartbeat_interval&quot;:300,&quot;timestamp&quot;:1595349475,&quot;secret_rule&quot;:[2,5,1,4],&quot;secret_key&quot;:&quot;seacasdgyijfhofiuxoannn&quot;&#125;&#125;</span><br><span class="line"></span><br><span class="line"># X 4</span><br><span class="line">s: b9486ab176a70d444c7e34aa2f35c09270365fd15f5fc023036a426165d38a6fa831cde17de8a37007c53fcb204cfc0155167647c42bca263007068a42774592</span><br><span class="line">id: [1,145,4,123456]</span><br><span class="line">device: [&quot;AUTO3915894629123456&quot;,&quot;799c882c-06de-4bfe-a358-98a76dccfa07&quot;]</span><br><span class="line">ets: 1595349475</span><br><span class="line">benchmark: seacasdgyijfhofiuxoannn</span><br><span class="line">time: 300</span><br><span class="line">ts: 1595349775262</span><br><span class="line">ua: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.64</span><br><span class="line">csrf_token: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">csrf: 08jbtyz494rzim62c7k29mk7tjc8s5ez</span><br><span class="line">visit_id: k5fj7uhwfn4</span><br><span class="line"></span><br><span class="line">&#123;&quot;code&quot;:0,&quot;message&quot;:&quot;0&quot;,&quot;ttl&quot;:1,&quot;data&quot;:&#123;&quot;heartbeat_interval&quot;:300,&quot;timestamp&quot;:1595349775,&quot;secret_rule&quot;:[2,5,1,4],&quot;secret_key&quot;:&quot;seacasdgyijfhofiuxoannn&quot;&#125;&#125;</span><br></pre></td></tr></table></figure></div>
 
 <h3 id="Parameter"><a href="#Parameter" class="headerlink" title="Parameter"></a>Parameter</h3><blockquote>
 <p>参数注意数据规律，除了参数<code>s</code>，以下几个参数比较重要  </p>
@@ -809,7 +861,7 @@
                 ></p>
 </blockquote>
 <blockquote>
-<p>深度可以看看<a class="link"   target="_blank" rel="noopener" href="https://webassembly.github.io/wabt/demo/wasm2wat/" >wasm2wat demo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><img  
+<p>深度可以看看<a class="link"   target="_blank" rel="noopener" href="https://webassembly.github.io/wabt/demo/wasm2wat/" >wasm2wat demo<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://i.loli.net/2020/07/22/gMbwhPefB1d3j75.png"
@@ -828,17 +880,17 @@
 <p>只是贴出大概步骤，跳转并只不是一个js文件里发生  </p>
 </blockquote>
 <h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><blockquote>
-<p>仓库地址 <a class="link"   target="_blank" rel="noopener" href="https://github.com/lkeme/bilibili-pcheartbeat" >哔哩哔哩 Web端直播加密心跳请求解析 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>代码逻辑比较简单，详情施工中</p>
+<p>仓库地址 <a class="link"   target="_blank" rel="noopener" href="https://github.com/lkeme/bilibili-pcheartbeat" >哔哩哔哩 Web端直播加密心跳请求解析<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br>代码逻辑比较简单，详情施工中</p>
 </blockquote>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>文章写的比较乱不全，会贴出加解密部分，剩下的东西自己分析了<br>该文章代码只为学习，麻烦未经允许禁止转载哦  </p>
 <p>靠别人写全部代码，不太可能，大家都是鸽子，咕咕咕！  </p>
 <p>END.  </p>
 
-        </div>
+		</div>
 
-        
-            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
-                <div class="article-copyright-info-container">
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
     <ul>
         <li><strong>标题:</strong> Bilibili Web端直播加密心跳请求解析</li>
         <li><strong>作者:</strong> Lkeme</li>
@@ -847,7 +899,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-05-15 18:51:35
+                    :</strong> 2025-04-28 11:58:37
             </li>
         
         <li>
@@ -860,84 +912,78 @@
             
 
             
-                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+                版权所有 &#169 Lkeme，禁止转载。
             
         </li>
     </ul>
 </div>
 
-            </div>
-        
+		</div>
+		
 
-        
-            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/Bilibili/">#Bilibili</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/Live/">#Live</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/Heartbeat/">#Heartbeat</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/Wasm/">#Wasm</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/Js/">#Js</a>&nbsp;
-                    </li>
-                
-            </ul>
-        
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Bilibili/">#Bilibili</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Live/">#Live</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Heartbeat/">#Heartbeat</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Wasm/">#Wasm</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Js/">#Js</a>&nbsp;
+			</li>
+			
+		</ul>
+		
 
-        
+		
 
-        
-            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
-                
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2021/03/23/%E5%92%8C%E5%BD%A9%E4%BA%91%E7%BD%91%E7%9B%98%E7%A0%94%E7%A9%B6%E8%AE%B0%E5%BD%95/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">和彩云网盘研究记录</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="next"
-                        rel="next"
-                        href="/2019/06/11/Bilibili-Android%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%92%AD%E6%94%BE%E6%95%B0%E6%8D%AE%E5%8C%85%E8%A7%A3%E6%9E%90/"
-                        >
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">Bilibili Android客户端播放API数据包解析</span>
-                                <span class="post-nav-item">下一篇</span>
-                            </span>
-                            <span class="right arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2021/03/23/%E5%92%8C%E5%BD%A9%E4%BA%91%E7%BD%91%E7%9B%98%E7%A0%94%E7%A9%B6%E8%AE%B0%E5%BD%95/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">和彩云网盘研究记录</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2019/06/11/Bilibili-Android%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%92%AD%E6%94%BE%E6%95%B0%E6%8D%AE%E5%8C%85%E8%A7%A3%E6%9E%90/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">Bilibili Android客户端播放API数据包解析</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
 
 
-        
-            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
-                <div class="comments-container mt-10 w-full ">
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
     <div id="comment-anchor" class="w-full h-2.5"></div>
     <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
         评论
@@ -955,13 +1001,13 @@
                 'data-repo-id': 'MDEwOlJlcG9zaXRvcnkxMjIzNDE4MDQ=',
                 'data-category': 'Announcements',
                 'data-category-id': 'DIC_kwDOB0rJrM4CfYEJ',
-                'data-mapping': 'title',
+                'data-mapping': 'url',
                 'data-strict': '0',
                 'data-reactions-enabled': '1',
                 'data-emit-metadata': '1',
                 'data-theme': 'preferred_color_scheme',
                 'data-lang': 'zh-CN',
-                'data-input-position': 'bottom',
+                'data-input-position': 'top',
                 'data-loading': 'lazy',
                 'crossorigin': 'anonymous',
                 'async': true
@@ -988,37 +1034,33 @@
     
 </div>
 
-            </div>
-        
-    </div>
+		</div>
+		
+	</div>
 
-    
-        <div class="toc-content-container">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        <div class="toc-title">此页目录</div>
-        <div class="page-title">Bilibili Web端直播加密心跳请求解析</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bilibili-Live"><span class="nav-text">Bilibili Live</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#reportEnterRoom"><span class="nav-text">reportEnterRoom</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reportHeartBeat"><span class="nav-text">reportHeartBeat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parameter"><span class="nav-text">Parameter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91"><span class="nav-text">逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol>
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">Bilibili Web端直播加密心跳请求解析</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bilibili-Live"><span class="nav-text">Bilibili Live</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#reportEnterRoom"><span class="nav-text">reportEnterRoom</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reportHeartBeat"><span class="nav-text">reportHeartBeat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parameter"><span class="nav-text">Parameter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91"><span class="nav-text">逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol>
 
-    </div>
+	</div>
 </div>
-        </div>
-    
+	</div>
+	
 </div>
+			</div>
 
+			
+		</div>
 
-
-                
-
-            </div>
-
-            
-
-        </div>
-
-        <div class="main-content-footer">
-            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
     <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">Powered by <a href="https://github.com/Lkeme" target="_blank">Lkeme</a></div>
         
         <div class="text-center">
             &copy;
@@ -1026,12 +1068,12 @@
               <span>2018</span>
               -
             
-            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Lkeme</a>
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Lkeme</a>
             
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共 30 篇文章
+                        共撰写了 30 篇文章
                     </span>
                     
                         <span>
@@ -1060,7 +1102,7 @@
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
             <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
-            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.1</a></span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
         </div>
         
             <div class="icp-info my-1"><a target="_blank" rel="nofollow" href="
@@ -1100,131 +1142,120 @@
                 
 
                     
+                        <script data-swup-reload-script data-pjax src="/static/js/Capoo.js"></script>
+                    
+        
+                
+
+                    
                         <script data-swup-reload-script>(function() {    var OriginTitile = document.title;    var titleTime;    document.addEventListener('visibilitychange', function() {        if (document.hidden) {            document.title = '死鬼去哪里了！';            clearTimeout(titleTime);        } else {            document.title = '(つェ⊂)咦!又好了!';            titleTime = setTimeout(function() {                document.title = OriginTitile;            },2000);        }    });})();</script>
                     
         
         
     </div>  
 </footer>
-        </div>
-    </div>
+		</div>
+	</div>
 
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="article-tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="right-bottom-tools page-aside-toggle">
-                <i class="fa-regular fa-outdent"></i>
-            </li>
-        
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
 
-        <!-- go comment -->
-        
-            <li class="go-comment">
-                <i class="fa-regular fa-comments"></i>
-            </li>
-        
-    </ul>
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+		<li class="right-bottom-tools rss flex justify-center items-center">
+			<a class="flex justify-center items-center" href="/atom.xml" target="_blank">
+				<i class="fa-regular fa-rss"></i>
+			</a>
+		</li>
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
 </div>
 
-        </div>
-    
-
-    <div class="right-side-tools-container">
-        <div class="side-tools-container">
-    <ul class="hidden-tools-list">
-        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
-            <i class="fa-regular fa-magnifying-glass-plus"></i>
-        </li>
-
-        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
-            <i class="fa-regular fa-magnifying-glass-minus"></i>
-        </li>
-
-        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
-            <i class="fa-regular fa-moon"></i>
-        </li>
-
-        <!-- rss -->
-        
-
-        
-
-        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
-            <i class="fa-regular fa-arrow-down"></i>
-        </li>
-    </ul>
-
-    <ul class="visible-tools-list">
-        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
-            <i class="fa-regular fa-cog fa-spin"></i>
-        </li>
-        
-            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
-        
-    </ul>
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="站内搜索您需要的内容..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
 </div>
-
-    </div>
-
-    <div class="image-viewer-container">
-    <img src="">
-</div>
-
-
-    
-        <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-          <span class="search-input-field-pre">
-            <i class="fa-solid fa-keyboard"></i>
-          </span>
-            <div class="search-input-container">
-                <input autocomplete="off"
-                       autocorrect="off"
-                       autocapitalize="off"
-                       placeholder="搜索..."
-                       spellcheck="false"
-                       type="search"
-                       class="search-input"
-                >
-            </div>
-            <span class="popup-btn-close">
-                <i class="fa-solid fa-times"></i>
-            </span>
-        </div>
-        <div id="search-result">
-            <div id="no-result">
-                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
+	
 
 </main>
 
 
-    
-<script src="/js/libs/Swup.min.js"></script>
-
-<script src="/js/libs/SwupSlideTheme.min.js"></script>
-
-<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
-
-<script src="/js/libs/SwupProgressPlugin.min.js"></script>
-
-<script src="/js/libs/SwupScrollPlugin.min.js"></script>
-
-<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
-
+<script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/Swup.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/SwupSlideTheme.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/SwupScriptsPlugin.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/SwupProgressPlugin.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/SwupScrollPlugin.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/SwupPreloadPlugin.min.js" ></script>
 <script>
     const swup = new Swup({
         plugins: [
@@ -1247,60 +1278,29 @@
 
 
 
+	<script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/tools/imageViewer.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/utils.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/main.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/layouts/navbarShrink.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/tools/scrollTopBottom.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/tools/lightDarkSwitch.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/layouts/categoryList.js" ></script>
+
+
+    <script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/tools/localSearch.js" ></script>
 
 
 
-<script src="/js/tools/imageViewer.js" type="module"></script>
-
-<script src="/js/utils.js" type="module"></script>
-
-<script src="/js/main.js" type="module"></script>
-
-<script src="/js/layouts/navbarShrink.js" type="module"></script>
-
-<script src="/js/tools/scrollTopBottom.js" type="module"></script>
-
-<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
-
-<script src="/js/layouts/categoryList.js" type="module"></script>
+    <script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/tools/codeBlock.js" ></script>
 
 
 
-    
-<script src="/js/tools/localSearch.js" type="module"></script>
+    <script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/layouts/lazyload.js" ></script>
 
 
 
-
-    
-<script src="/js/tools/codeBlock.js" type="module"></script>
-
-
-
-
-    
-<script src="/js/layouts/lazyload.js" type="module"></script>
+    <script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/tools/runtime.js" ></script>
+    <script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/odometer.min.js" ></script>
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/assets/odometer-theme-minimal.css">
 
 
 
-
-    
-<script src="/js/tools/runtime.js"></script>
-
-    
-<script src="/js/libs/odometer.min.js"></script>
-
-    
-<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
-
-
-
-
-  
-<script src="/js/libs/Typed.min.js"></script>
-
-  
-<script src="/js/plugins/typed.js" type="module"></script>
+  <script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/Typed.min.js" ></script>
+  <script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/plugins/typed.js" ></script>
 
 
 
@@ -1310,18 +1310,19 @@
 
 
 
-<div class="post-scripts" data-swup-reload-script>
-    
-        
-<script src="/js/tools/tocToggle.js" type="module"></script>
 
-<script src="/js/layouts/toc.js" type="module"></script>
-
-<script src="/js/plugins/tabs.js" type="module"></script>
-
-    
-</div>
+    <script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/tools/tocToggle.js" data-swup-reload-script></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/layouts/toc.js" data-swup-reload-script></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/plugins/tabs.js" data-swup-reload-script></script>
 
 
+<script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/moment-with-locales.min.js" data-swup-reload-script></script>
+<script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/layouts/essays.js" data-swup-reload-script></script>
+
+
+    <script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/libs/pangu.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.2/files/source/js/build/plugins/pangu.js" ></script>
+
+
+
+	
 </body>
+
 </html>
